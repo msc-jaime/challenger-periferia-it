@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 // Routes
 app.get('/', (req, res, next) => {res.send('Api V1 Online Store');});
 app.use('/products', require('./routes/products'));
-app.use('/products', require('./routes/products'));
+app.use('/customers', require('./routes/customers'));
 
 // Error handling
 app.use((error, req, res, next) => {
