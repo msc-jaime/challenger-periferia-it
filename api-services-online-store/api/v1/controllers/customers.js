@@ -21,15 +21,13 @@ exports.getCustomer = (req, res, next) => {
 }
 
 exports.createCustomer = (req, res, next) => {
-  const name = req.body.name;
-  const price = req.body.price;
-  const totalQuantity = req.body.totalQuantity;
-  const urlCustomerImage = req.body.urlCustomerImage;
+  const fullName = req.body.fullName;
+  const email = req.body.email;
+  const amount = req.body.amount;
   Customer.create({
-    name: name,
-    price: price,
-    totalQuantity: totalQuantity,
-    urlCustomerImage: urlCustomerImage
+    fullName: fullName,
+    email: email,
+    amount: amount,
   })
     .then(result => {
       res.status(201).json({
@@ -44,17 +42,17 @@ exports.createCustomer = (req, res, next) => {
 
 exports.updateCustomer = (req, res, next) => {
   const customerId = req.params.customerId;
-  const updatedName = req.body.name;
-  const updatedPrice = req.body.price;
-  const updatedTotalQuantity = req.body.totalQuantity;
+  const updateFullName = req.body.fullName;
+  const updateEmail = req.body.email;
+  const updateAmount = req.body.amount;
   Customer.findByPk(customerId)
     .then(customer => {
       if (!customer) {
         return res.status(404).json({ message: 'Customer not found!' });
       }
-      customer.name = updatedName;
-      customer.price = updatedPrice;
-      customer.totalQuantity = updatedTotalQuantity;
+      customer.updateFullName = updateFullName;
+      customer.updateEmail = updateEmail;
+      customer.updateAmount = updateAmount;
       return customer.save();
     })
     .then(result => {

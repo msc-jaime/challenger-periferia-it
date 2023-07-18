@@ -1,4 +1,4 @@
-const { getCustomers, getCustomer, createCustomer, updateCustomer, deleteCustomer} = require('../controllers/Customers');
+const { getCustomers, getCustomer, createCustomer, updateCustomer, deleteCustomer} = require('../controllers/customers');
 const router = require('express').Router();
 
 // CRUD Routes /customers
