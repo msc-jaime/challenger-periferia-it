@@ -14,3 +14,17 @@ El escenario propuesto es una tienda donde el usuario puede seleccionar producto
 - Implementación de pruebas unitarias y/o funcionales automatizadas (deseable).
 - Implementación de docker (deseable).
 - Uso de herramienta de documentación de las API's.
+
+
+## Run app
+
+### Build Dockerfile, run service with Docker compose up
+``` Bash
+cd api-services-online-store/ && docker compose build && cd ..
+docker compose up api_service_online_store
+```
+
+### Open URL in browser
+``` Browser
+http://localhost:3001/
+```

@@ -1,11 +1,11 @@
-const controller = require('../controllers/products');
+const { getProducts, getProduct, createProduct, updateProduct, deleteProduct} = require('../controllers/products');
 const router = require('express').Router();
 
-// CRUD Routes /empleados
-router.get('/', controller.getEmpleados); 
-router.get('/:productsId', controller.getEmpleado); 
-router.post('/', controller.createEmpleado);
-router.put('/:productsId', controller.updateEmpleado); 
-router.delete('/:productsId', controller.deleteEmpleado);
+// CRUD Routes /products
+router.get('/', getProducts); 
+router.get('/:productId', getProduct); 
+router.post('/', createProduct);
+router.put('/:productId', updateProduct); 
+router.delete('/:productId', deleteProduct);
 
 module.exports = router;

@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  api_service_online_store:
+    container_name: api_service_online_store
+    build:  
+      context: ./api-services-online-store
+      dockerfile: ./Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+      - PG_DB=db_online_store
+      - PG_USER=periferia_it
+      - PG_PASSWORD=12345
+      - PG_HOST=pg_db_online_store
+    depends_on:
+      - pg_db_online_store
+    networks:
+      - app-challenger-periferia-it
+
+  pg_db_online_store:
+    container_name: pg_db_online_store
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=db_online_store
+      - POSTGRES_USER=periferia_it
+      - POSTGRES_PASSWORD=12345
+    volumes:
+      - pg_db_online_store_data:/var/lib/postgresql/data
+    networks:
+      - app-challenger-periferia-it
+
+volumes:
+  pg_db_online_store_data: {}
+
+networks:
+  app-challenger-periferia-it:
+    driver: bridge
