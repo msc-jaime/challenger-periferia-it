@@ -83,12 +83,4 @@ exports.deleteProduct = (req, res, next) => {
     })
     .catch(err => console.log(err));
 }
-exports.getProducts = (req, res, next) => {
-  Product.findAll()
-    .then(products => {
-      res.status(200).json({ products: products });
-    })
-    .catch(err => console.log(err));
-}
-
 

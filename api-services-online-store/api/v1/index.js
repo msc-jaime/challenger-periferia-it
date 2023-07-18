@@ -13,11 +13,9 @@ app.use((req, res, next) => {
     next();
   });
 
-// Test route
-app.get('/', (req, res, next) => {
-    res.send('Hello World');
-  });
-
+// Routes
+app.get('/', (req, res, next) => {res.send('Api V1 Online Store');});
+app.use('/products', require('./routes/products'));
 app.use('/products', require('./routes/products'));
 
 // Error handling
