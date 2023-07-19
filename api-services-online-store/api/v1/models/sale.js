@@ -12,13 +12,23 @@ const Sale = db.define('sale', {
     type: DataTypes.STRING,
     allowNull: false
   } ,
-  idProduct: {
+  productId: {
     type: DataTypes.BIGINT,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'products',
+      key: 'id'
+    },
+    onDelete: 'cascade'
   },
-  idCustomers: {
+  customerId: {
     type: DataTypes.BIGINT,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'customers',
+      key: 'id'
+    },
+    onDelete: 'cascade'
   },
   quantityProduct: {
     type:DataTypes.INTEGER,
@@ -29,5 +39,20 @@ const Sale = db.define('sale', {
     allowNull: false
   }
 });
+
+
+Sale.associate = (models) => {
+  Sale.belongsTo(models.Product, {
+    foreignKey: "productId",
+    as: "product"
+  });
+}
+
+Sale.associate = (models) => {
+  Sale.belongsTo(models.Customer, {
+    foreignKey: "customerId",
+    as: "customer"
+  });
+}
 
 module.exports = Sale;

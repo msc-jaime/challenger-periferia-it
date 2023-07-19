@@ -26,4 +26,8 @@ const Product = db.define('product', {
   },
 });
 
+Product.associate = models => {
+  Product.hasMany(models.Sale, { as: "sale"});
+}
+
 module.exports = Product;

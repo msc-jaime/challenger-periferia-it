@@ -22,4 +22,8 @@ const Customer = db.define('customer', {
   },
 });
 
+Customer.associate = models => {
+  Customer.hasMany(models.Sale, { as: "sale"});
+}
+
 module.exports = Customer;
