@@ -10,19 +10,38 @@ const Product = db.define('product', {
   },
   name: {
     type: DataTypes.STRING, 
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Name is required" },
+    },
   },
   price: {
     type:DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Price is required" },
+    },
   },
   totalQuantity: {
     type:DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Total quantity is required" },
+    },
+  },
+  totalSold: {
+    type:DataTypes.INTEGER,
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Total sold is required" },
+    },
   },
   urlProductImage: { 
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Url product image is required" },
+    },
   },
 });
 

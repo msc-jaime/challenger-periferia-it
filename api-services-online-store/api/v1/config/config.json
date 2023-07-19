@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "periferia_it",
+    "password": "12345",
+    "database": "db_online_store",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

@@ -24,11 +24,13 @@ exports.createProduct = (req, res, next) => {
   const name = req.body.name;
   const price = req.body.price;
   const totalQuantity = req.body.totalQuantity;
+  const totalSold = req.body.totalSold;
   const urlProductImage = req.body.urlProductImage;
   Product.create({
     name: name,
     price: price,
     totalQuantity: totalQuantity,
+    totalSold: totalSold,
     urlProductImage: urlProductImage
   })
     .then(result => {
@@ -47,6 +49,7 @@ exports.updateProduct = (req, res, next) => {
   const updatedName = req.body.name;
   const updatedPrice = req.body.price;
   const updatedTotalQuantity = req.body.totalQuantity;
+  const updatedTotalSold = req.body.updatedTotalSold;
   const updatedUrlProductImage = req.body.urlProductImage;
   Product.findByPk(productId)
     .then(product => {
@@ -56,6 +59,7 @@ exports.updateProduct = (req, res, next) => {
       product.name = updatedName;
       product.price = updatedPrice;
       product.totalQuantity = updatedTotalQuantity;
+      product.totalSold = updatedTotalSold;
       product.urlProductImage = updatedUrlProductImage;
       return product.save();
     })

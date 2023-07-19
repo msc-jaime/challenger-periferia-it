@@ -10,15 +10,24 @@ const Customer = db.define('customer', {
   },
   fullName: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Full name is required" },
+    },
   },
   email: { 
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Email is required" },
+    },
   },
   amount: {
     type: DataTypes.STRING, 
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Amount is required" },
+    },
   },
 });
 

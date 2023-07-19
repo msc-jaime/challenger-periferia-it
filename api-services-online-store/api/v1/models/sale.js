@@ -10,11 +10,17 @@ const Sale = db.define('sale', {
   },
   invoiceNumber: {
     type: DataTypes.STRING,
-    allowNull: false
-  } ,
+    allowNull: false,
+    validate: {
+      notNull: { message: "Invoice number is required" },
+    },
+  },
   productId: {
     type: DataTypes.BIGINT,
     allowNull: false,
+    validate: {
+      notNull: { message: "Product id is required" },
+    },
     references: {
       model: 'products',
       key: 'id'
@@ -24,6 +30,9 @@ const Sale = db.define('sale', {
   customerId: {
     type: DataTypes.BIGINT,
     allowNull: false,
+    validate: {
+      notNull: { msg: "Customer id is required" },
+    },
     references: {
       model: 'customers',
       key: 'id'
@@ -32,11 +41,17 @@ const Sale = db.define('sale', {
   },
   quantityProduct: {
     type:DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Quantity product is required" },
+    },
   },
   price: {
     type:DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Price is required" },
+    },
   }
 });
 

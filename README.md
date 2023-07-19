@@ -3,8 +3,8 @@
 ## Requisitos
 El escenario propuesto es una tienda donde el usuario puede seleccionar productos, agregarlos a un carrito de compras. 
 ### Reglas: 
-- Los productos estarán precargados en la BD PostgreSQL.
-- Los clientes estarán previamente cargados en la BD PostgreSQL, con un cupo para compras asignado.
+- [X] Los productos estarán precargados en la BD PostgreSQL.
+- [X] Los clientes estarán previamente cargados en la BD PostgreSQL, con un cupo para compras asignado.
 - El sistema debe advertir cuándo el cliente sobrepasa sobrepasa su cupo, para no dejar agregar más productos al carrito.
 - Se debe registrar las ventas realizadas.
 - Pantalla de buscador de productos ordenados por los más vendidos.
@@ -22,6 +22,13 @@ El escenario propuesto es una tienda donde el usuario puede seleccionar producto
 ``` Bash
 cd api-services-online-store/ && docker compose build && cd ..
 docker compose up api_service_online_store
+```
+
+### Run seeders
+``` Bash
+cd api-services-online-store/api/v1/ 
+npx sequelize-cli db:seed:all
+cd ../../../
 ```
 
 ### Open URL in browser
