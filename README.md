@@ -13,7 +13,7 @@ El escenario propuesto es una tienda donde el usuario puede seleccionar producto
 - Uso de uno o varios patrones de diseño, apropiados para este escenario.
 - Implementación de pruebas unitarias y/o funcionales automatizadas (deseable).
 - [X] Implementación de docker (deseable).
-- Uso de herramienta de documentación de las API's.
+- [X] Uso de herramienta de documentación de las API's.
 
 
 ## Run app
