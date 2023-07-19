@@ -50,9 +50,9 @@ exports.updateCustomer = (req, res, next) => {
       if (!customer) {
         return res.status(404).json({ message: 'Customer not found!' });
       }
-      customer.updateFullName = updateFullName;
-      customer.updateEmail = updateEmail;
-      customer.updateAmount = updateAmount;
+      customer.fullName = updateFullName;
+      customer.email = updateEmail;
+      customer.amount = updateAmount;
       return customer.save();
     })
     .then(result => {

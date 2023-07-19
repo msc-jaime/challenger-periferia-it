@@ -49,7 +49,7 @@ exports.updateProduct = (req, res, next) => {
   const updatedName = req.body.name;
   const updatedPrice = req.body.price;
   const updatedTotalQuantity = req.body.totalQuantity;
-  const updatedTotalSold = req.body.updatedTotalSold;
+  const updatedTotalSold = req.body.totalSold;
   const updatedUrlProductImage = req.body.urlProductImage;
   Product.findByPk(productId)
     .then(product => {
