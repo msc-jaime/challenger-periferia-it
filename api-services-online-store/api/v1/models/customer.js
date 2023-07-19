@@ -8,9 +8,18 @@ const Customer = db.define('customer', {
     allowNull: false,
     primaryKey: true
   },
-  fullName: DataTypes.STRING,
-  email: DataTypes.STRING,
-  amount: DataTypes.STRING,
+  fullName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  email: { 
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  amount: {
+    type: DataTypes.STRING, 
+    allowNull: false
+  },
 });
 
 module.exports = Customer;

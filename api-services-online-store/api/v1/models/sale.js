@@ -8,11 +8,26 @@ const Sale = db.define('sale', {
     allowNull: false,
     primaryKey: true
   },
-  invoiceNumber: DataTypes.STRING,
-  idProduct: DataTypes.BIGINT,
-  idCustomers: DataTypes.BIGINT,
-  quantityProduct: DataTypes.INTEGER,
-  price: DataTypes.STRING,
+  invoiceNumber: {
+    type: DataTypes.STRING,
+    allowNull: false
+  } ,
+  idProduct: {
+    type: DataTypes.BIGINT,
+    allowNull: false
+  },
+  idCustomers: {
+    type: DataTypes.BIGINT,
+    allowNull: false
+  },
+  quantityProduct: {
+    type:DataTypes.INTEGER,
+    allowNull: false
+  },
+  price: {
+    type:DataTypes.STRING,
+    allowNull: false
+  }
 });
 
 module.exports = Sale;

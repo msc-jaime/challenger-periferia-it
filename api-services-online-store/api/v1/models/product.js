@@ -8,10 +8,22 @@ const Product = db.define('product', {
     allowNull: false,
     primaryKey: true
   },
-  name: DataTypes.STRING,
-  price: DataTypes.STRING,
-  totalQuantity: DataTypes.INTEGER,
-  urlProductImage: DataTypes.STRING
+  name: {
+    type: DataTypes.STRING, 
+    allowNull: false
+  },
+  price: {
+    type:DataTypes.STRING,
+    allowNull: false
+  },
+  totalQuantity: {
+    type:DataTypes.INTEGER,
+    allowNull: false
+  },
+  urlProductImage: { 
+    type: DataTypes.STRING,
+    allowNull: false
+  },
 });
 
 module.exports = Product;
