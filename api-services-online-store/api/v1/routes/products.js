@@ -36,7 +36,7 @@ const router = require('express').Router();
  *        price: 30900
  *        totalQuantity: 40
  *        totalSold: 0
- *        urlProductImage: https://http2.mlstatic.com/D_NQ_NP_2X_647505-MCO48372021583_112021-F.webp
+ *        urlProductImage: https://http2.mlstatic.com/D_NQ_NP_2X_841963-MCO41061244098_032020-F.webp
  */  
 
 /**

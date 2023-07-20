@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './products/product/product.component';
 import { ProductsModule } from './products/products.module';
 import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
     CartComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     ProductsModule,
     AppRoutingModule

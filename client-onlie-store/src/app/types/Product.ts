@@ -7,3 +7,6 @@ export interface Product {
     urlProductImage: string;
   }
   
+  export class Products {
+    "products": Product[]
+  }

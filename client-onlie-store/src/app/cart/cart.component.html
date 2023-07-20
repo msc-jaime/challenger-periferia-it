@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<h1>Carrito</h1>
+
+<div *ngIf="getCart().length > 0">
+    <div *ngFor="let book of getCart(); let i=index;">
+        <p class="my-4 text-2xl">{{i+1}}. {{ book.name }}</p>
+        <button class="bg-red-400 rounded p-3" 
+         (click)="removeFromCart(book.id)">Eliminar</button>
+    </div>
+</div>
+<div *ngIf="getCart().length == 0">Tu carrito está vacío</div>
+

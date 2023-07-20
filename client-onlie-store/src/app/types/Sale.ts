@@ -1,4 +1,4 @@
-export interface Product {
+export interface Sale {
     id: string;
     invoiceNumber: string;
     productId: string;
