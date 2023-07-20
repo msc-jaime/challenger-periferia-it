@@ -21,7 +21,8 @@ El escenario propuesto es una tienda donde el usuario puede seleccionar producto
 ### Build Dockerfile, run service with Docker compose up
 ``` Bash
 cd api-services-online-store/ && docker compose build && cd ..
-docker compose up api_service_online_store
+cd client-online-store/ && docker compose build && cd ..
+docker compose up client_online_store
 ```
 
 ### Run seeders
@@ -33,5 +34,5 @@ cd ../../../
 
 ### Open URL in browser
 ``` Browser
-http://localhost:3001/
+http://localhost:8080/
 ```

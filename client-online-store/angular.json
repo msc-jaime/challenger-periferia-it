@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client-onlie-store": {
+    "client-online-store": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client-onlie-store",
+            "outputPath": "dist/client-online-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "client-onlie-store:build:production"
+              "browserTarget": "client-online-store:build:production"
             },
             "development": {
-              "browserTarget": "client-onlie-store:build:development"
+              "browserTarget": "client-online-store:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "client-onlie-store:build"
+            "browserTarget": "client-online-store:build"
           }
         },
         "test": {
