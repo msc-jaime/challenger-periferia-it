@@ -7,7 +7,7 @@ El escenario propuesto es una tienda donde el usuario puede seleccionar producto
 - [X] Los clientes estarán previamente cargados en la BD PostgreSQL, con un cupo para compras asignado.
 - El sistema debe advertir cuándo el cliente sobrepasa sobrepasa su cupo, para no dejar agregar más productos al carrito.
 - Se debe registrar las ventas realizadas.
-- Pantalla de buscador de productos ordenados por los más vendidos.
+- [X] Pantalla de buscador de productos ordenados por los más vendidos.
 
 ### Requerimientos no funcionales:
 - Uso de uno o varios patrones de diseño, apropiados para este escenario.

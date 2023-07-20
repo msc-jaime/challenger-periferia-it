@@ -19,6 +19,12 @@ export class ProductsComponent implements OnInit {
       .pipe(first())
       .subscribe(products => { this.products = products; console.log(this.products)});
   }
+
+  orderByTopSeller() {
+    this.products['products'].sort( (a,b) => {
+      return a.totalSold - b.totalSold;
+    });
+  }
   /*
   ngOnInit(): void {
     console.log("test");
