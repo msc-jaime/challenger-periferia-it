@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CartService } from './cart.service';
 
 @Component({
@@ -7,12 +7,10 @@ import { CartService } from './cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     //this.numberItemCart = this.cartService.getCartContentsCount();
-    
   }
 
   getCart() {

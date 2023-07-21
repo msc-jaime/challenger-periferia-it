@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Product } from '../types/Product';
 import { ReplaySubject } from 'rxjs';
 
@@ -7,19 +7,14 @@ import { ReplaySubject } from 'rxjs';
 })
 export class CartService {
   product: Array<Product> = [];
-
-  private cartCount = new ReplaySubject<number>(1);
-  cartCount$ = this.cartCount.asObservable();
-  setCartCount(count: number) {
-    // encapsulate with logic to set local storage
-    localStorage.setItem("cart_count", JSON.stringify(count));
-    this.cartCount.next(count);
-  }
+  numberItemCart: number = 0;
+  @Output() evenEmitterAddRemoveItemCart: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
   add(product: Product) {
     this.product.push(product);
+    this.numberItemCart = this.product.length;
   }
 
   get() {
@@ -28,5 +23,6 @@ export class CartService {
 
   remove(id: String) {
     this.product = this.product.filter((product) => product.id != id);
+    this.numberItemCart = this.product.length;
   }
 }

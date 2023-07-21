@@ -7,26 +7,21 @@ import { CartService } from './cart/cart.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //@Input() numberItemCart: number = 0;
-  cartCount$?;
-
-  constructor(
-    private cartService: CartService) {
-      this.cartCount$ = this.cartService.cartCount$
-    }
+  numberItemCart = 0;
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    //this.numberItemCart = this.cartService.getCartContentsCount();
-    //this.numberItemsCart = this.cartService.numberItemsCart;
+    this.cartService.evenEmitterAddRemoveItemCart.subscribe(
+      numberItemCart => {
+        console.log("EventEmitter", numberItemCart);
+        this.numberItemCart = numberItemCart
+      }
+    ) 
   }
 
   isAuthenticated() {
-    //return this.authService.isAuthenticated;
     return false;
   }
 
-  logout() {
-    //this.authService.logout();
-    //this.authService.logout();
-  }
+  logout() {}
 }
