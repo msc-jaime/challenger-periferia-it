@@ -7,20 +7,21 @@ import { CartService } from './cart/cart.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  numberItemCart = 0;
+  numberItemCart: number = 0;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.evenEmitterAddRemoveItemCart.subscribe(
-      numberItemCart => {
-        console.log("EventEmitter", numberItemCart);
-        this.numberItemCart = numberItemCart
-      }
+      numberItemCart => (this.numberItemCart = numberItemCart)
     ) 
   }
 
   isAuthenticated() {
     return false;
+  }
+
+  isEmptyCart() {
+    return this.numberItemCart == 0 ? true: false;
   }
 
   logout() {}

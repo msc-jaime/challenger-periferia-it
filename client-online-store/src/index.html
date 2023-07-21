@@ -61,6 +61,14 @@
       color: #000;
       /*Set to match the Tailwind colour you want the active one to be */
     }
+
+    @layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
   </style>
 </head>
 

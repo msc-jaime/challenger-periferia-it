@@ -7,14 +7,21 @@ import { CartService } from './cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+  numberItemCart = 0;
+  shippingCost = 8000;
+  subtotal = 0;
+  total = 0;
+
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {
-    //this.numberItemCart = this.cartService.getCartContentsCount();
+  ngOnInit(): void { 
+    this.cartService.getSubtotal();
+    this.numberItemCart = this.cartService.numberItemCart;
+    this.subtotal = this.cartService.subtotal;
+    this.total = this.shippingCost + this.subtotal
   }
 
   getCart() {
-    //return this.carts;
     return this.cartService.get();
   }
 

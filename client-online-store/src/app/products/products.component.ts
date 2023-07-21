@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void { 
     this.productService.getAll()
       .pipe(first())
-      .subscribe(products => { this.products = products; console.log(this.products)});
+      .subscribe(products => (this.products = products));
   }
 
   orderByTopSeller() {
@@ -25,12 +25,4 @@ export class ProductsComponent implements OnInit {
       return a.totalSold - b.totalSold;
     });
   }
-  /*
-  ngOnInit(): void {
-    console.log("test");
-    this.productsService.getAll()
-      .pipe(first())
-      .subscribe(products => { this.products = products; console.log(this.products)});
-  }
-  */
 }

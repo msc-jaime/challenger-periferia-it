@@ -1,31 +1,12 @@
-
-  <div>
-    <img class="sm:h-40 md:h-48 xl:h-60 mx-auto object-contain" [src]="product.urlProductImage">
-    <div class="pt-3">
-      <p class="font-bold pr-4">{{ product.name | titlecase }}</p>
-    </div>
-    <div class="pt-3">
-      <p class="float-left pt-1 text-gray-900 inline-block">{{ product.price | currency:"COP":"$ " }}</p>
-      <button
-        class="float-right"
-        (click)="addToCart()">
-          <span class="material-symbols-outlined">shopping_cart_checkout</span>
-      </button>
-    </div>
+<div>
+  <img class="sm:h-40 md:h-48 xl:h-60 mx-auto object-contain" [src]="product.urlProductImage">
+  <div class="pt-3">
+    <p class="font-bold pr-4">{{ product.name | titlecase }}</p>
   </div>
-
-<!--
-<li class="flex border rounded-xl h-60">
-    <img [src]="product.urlProductImage" [alt]="product.name" width="100"
-        class="m-auto rounded-sm" />
-    <div class="m-auto">
-        <p class="text-lg">{{ product.name | titlecase }}</p>
-        <p class="my-4">{{ product.price | currency:"COP":"symbol" }}</p>
-        <button class="bg-yellow-400 rounded p-3" *ngIf="!isInCart"
-            (click)="addToCart()">Add to Cart</button>
-        <button class="bg-yellow-400 rounded p-3" *ngIf="isInCart"
-            (click)="removeFromCart()">Remove from
-            Cart</button>
-    </div>
-</li>
--->
+  <div class="pt-3">
+    <p class="float-left pt-1 text-gray-900 inline-block">{{ product.price | currency:"COP":"$ " }}</p>
+    <button class="float-right" (click)="addToCart()">
+      <span class="material-symbols-outlined">shopping_cart_checkout</span>
+    </button>
+  </div>
+</div>
